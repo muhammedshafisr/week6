@@ -1,0 +1,17 @@
+.flag{
+    background-color: blue;
+    color: green;
+}
+.eye{
+    position: absolute;
+    left: 16rem;
+    top: 0.6rem;
+    color: black;
+}
+@media(max-width:350px){
+    .eye{
+        position: absolute;
+        left: 10rem;
+        top: 0.6rem;
+    }
+}

@@ -1,0 +1,32 @@
+
+nav{
+    background-color: #3b71ca;
+}
+.head{
+    width: 100%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+}
+.head span{
+    margin-left: 30px;
+    color: #fff;
+}
+
+.valid{
+    color: red;
+    font-weight: 600;
+}
+
+.form-control{
+    height: 45px !important;
+}
+.form-floating label{
+    padding-top: 8px !important;
+}
+
+@media(max-width:350px){
+    .form{
+        width: 200px !important;
+    }
+}

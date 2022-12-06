@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website | <%=title %></title>
+    <link rel="stylesheet" href="style-home.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav>
+        <div class="head">
+          
+            <span>Website</span>
+            <%var user,b;%>
+
+            <div class="dropdown-center">
+              <!-- <div class="bg"><span>Bag</span><i class="bi bi-bag bag"></i></div> -->
+             <div class="nav-icons-crsr bi bi-person" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Account</div>                   
+              <ul class="dropdown-menu">
+                <%if(user){%>
+                <li><a class="dropdown-item" href="#">
+                  <%=user%> <%=b%> </a></li>
+                <li><a href="/logout"><button type="submit" class="dropdown-item btn" style="color:#fff ;">Logout</button></a></li>
+                  <%}else{%>
+
+                <li><a href="/"><button type="submit" class="dropdown-item btn" style="color:#fff ;">Login</button></a></li>
+                    <%}%>
+              </ul>
+            </div>
+            
+        </div>
+    </nav>
+    
+  
+<div class="section">
+  <div class="container">
+    <div class="row justify-content-center">
+     
+          <% for(var i of displayproduct) { %>
+           
+            <div class="col-12 col-sm-6 col-lg-3 clr">
+              <div class="card">
+                <img class="img-adjuster" src="<%= i.image %>" />
+                <div class="card-body">
+                  <h5 class="card-title"><%= i.productname %></h5>
+                  <p class="card-text"><%= i.description%></p>
+                  <a href="#" class="btn btn-primary">Buy now</a>
+                </div>
+              </div>
+            </div>
+            <% } %>
+                  
+      </div>
+      </div>
+</div>
+
+  <%- include('./partials/footer.ejs')%>
+</body>
+</html>

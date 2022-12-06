@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MDB | <%= title %></title>
+        <!-- css link -->
+    <link rel="stylesheet" href="style.css">
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    rel="stylesheet"
+    />
+    
+    <!-- Google Fonts -->
+    <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css"
+    rel="stylesheet"
+    />
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Navbar brand -->
+      <a class="navbar-brand mt-2 mt-lg-0" href="#">
+        <img
+          src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
+          height="15"
+          alt="MDB Logo"
+          loading="lazy"
+        />
+      </a>
+
+      <!-- Left links -->
+    </div>
+    <!-- Collapsible wrapper -->
+
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+
+  <% var value;%>
+            <% if(value=='success') {%>
+             <div class="mt-5" style="color: rgb(11, 204, 11); text-align: center;">Updated successfully<i class="bi bi-check2" style="font-size: 20px;"></i></div>
+           <% }%>
+
+           <%var data%>
+<% if(data){ %>
+
+  <div class="container d-flex justify-content-center" style="height: 80vh; align-items: center;">
+    <form class="form" action="edit<%=data._id%>" method="post">
+    
+              
+      <div class="row mb-4">
+        <div class="col">
+          <div class="form-outline">
+            <input type="text" id="form3Example1" name="firstname" value="<%= data.firstname%>" class="form-control" />
+            <label class="form-label" for="form3Example1"></label>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-outline">
+            <input type="text" id="form3Example2" name="lastname" value="<%= data.lastname%>" class="form-control" />
+            <label class="form-label" for="form3Example2"></label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Email input -->
+      <div class="form-outline mb-4">
+        <input type="email" id="form3Example3" name="email" value="<%= data.email%>" class="form-control" />
+        <label class="form-label" for="form3Example3"></label>
+      </div>
+
+      <!-- Password input -->
+      <div class="form-outline mb-4">
+        <input type="text" id="form3Example4" name="password" value="<%= data.password%>" class="form-control" />
+        <label class="form-label" for="form3Example4"></label>
+      </div>
+
+      <!-- Password input -->
+       
+                         
+   <% }%>                
+      
+      <!-- Submit button -->
+      <button type="submit" class="btn btn-primary btn-block mb-4">Update</button>
+    
+      <!-- Register buttons -->
+     
+    
+    </form>
+  </div>
+
+  <!-- footer -->
+  <%- include('./partials/footer.ejs')%>
+
+</body>
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"
+></script>
+</html>
